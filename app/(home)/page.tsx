@@ -10,11 +10,21 @@ const SECTIONS = [
     slug: "general",
     icon: "sailboat",
   },
-  { title: "Anywhere", href: "/anywhere", slug: "anywhere", icon: "microchip" },
-  { title: "Community", href: "/community", slug: "community", icon: "message-circle-heart" },
+  {
+    title: "Anywhere",
+    href: "/docs/anywhere",
+    slug: "anywhere",
+    icon: "microchip",
+  },
+  {
+    title: "Community",
+    href: "/docs/community",
+    slug: "community",
+    icon: "message-circle-heart",
+  },
   {
     title: "Linux Concepts",
-    href: "/linux",
+    href: "/docs/linux",
     slug: "linux",
     icon: "graduation-cap",
   },
@@ -39,9 +49,7 @@ export default function HomePage() {
     <div className="flex flex-col flex-1 container mx-auto max-w-5xl p-8 prose">
       <header>
         <h1>Welcome to the Ultramarine Wiki!</h1>
-        <p>
-	Text here
-        </p>
+        <p>Text here</p>
       </header>
 
       <section>
@@ -70,9 +78,10 @@ export default function HomePage() {
       <section>
         <h2>Contributing</h2>
         <p>
-          This site is open source and contributions are welcome. Check out
-          the{" "}
-          <a href="https://github.com/ultramarine-linux/wiki-fumadocs">GitHub repository</a>{" "}
+          This site is open source and contributions are welcome. Check out the{" "}
+          <a href="https://github.com/ultramarine-linux/wiki-fumadocs">
+            GitHub repository
+          </a>{" "}
           for more information.
         </p>
       </section>
