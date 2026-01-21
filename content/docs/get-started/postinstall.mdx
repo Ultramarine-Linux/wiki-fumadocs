@@ -3,7 +3,6 @@ title: Post-Installation
 description: "Things to do after installing Ultramarine Linux."
 ---
 
-
 ## Creating a User Account
 
 After Ultramarine is installed and you've rebooted into it, you'll be greeted with the out of box experience, Taidan.
@@ -154,5 +153,3 @@ sudo sbctl sign /boot/vmlinuz-$(uname -r)
 However, once you have installed sbctl, it should've already set up a hook to sign the kernel, initramfs and bootloader binaries automatically on kernel updates.
 
 After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
-
-

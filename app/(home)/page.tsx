@@ -3,13 +3,22 @@ import { source } from "@/lib/source";
 import { icons as lucideIcons } from "lucide-react";
 import { createElement } from "react";
 
-const SECTIONS = [
+const START = [
   {
-    title: "General",
-    href: "/docs/general",
-    slug: "general",
+    title: "Get Started",
+    href: "/docs/get-started",
+    slug: "get-started",
     icon: "sailboat",
   },
+  {
+    title: "Using Ultramarine",
+    href: "/docs/usage",
+    slug: "usage",
+    icon: "sailboat",
+  },
+] as const;
+
+const LEARN = [
   {
     title: "Anywhere",
     href: "/docs/anywhere",
@@ -17,7 +26,7 @@ const SECTIONS = [
     icon: "microchip",
   },
   {
-    title: "Community",
+    title: "Join the Community",
     href: "/docs/community",
     slug: "community",
     icon: "message-circle-heart",
@@ -26,6 +35,12 @@ const SECTIONS = [
     title: "Linux Concepts",
     href: "/docs/linux",
     slug: "linux",
+    icon: "graduation-cap",
+  },
+  {
+    title: "About Ultramarine",
+    href: "/docs/about",
+    slug: "about",
     icon: "graduation-cap",
   },
 ] as const;
@@ -39,7 +54,12 @@ function getIcon(iconName: string | undefined): React.ReactNode | undefined {
 }
 
 export default function HomePage() {
-  const sections = SECTIONS.map((section) => ({
+  const start = START.map((section) => ({
+    ...section,
+    description: source.getPage([section.slug])?.data.description ?? "",
+    icon: getIcon(section.icon),
+  }));
+  const learn = LEARN.map((section) => ({
     ...section,
     description: source.getPage([section.slug])?.data.description ?? "",
     icon: getIcon(section.icon),
@@ -49,12 +69,28 @@ export default function HomePage() {
     <div className="flex flex-col flex-1 container mx-auto max-w-5xl p-8 prose">
       <header>
         <h1>Welcome to the Ultramarine Wiki!</h1>
-        <p>Text here</p>
+        <p></p>
       </header>
 
       <section>
+        <h2>Get Started and Settled</h2>
         <Cards>
-          {sections.map((section) => (
+          {start.map((section) => (
+            <Card
+              key={section.slug}
+              title={section.title}
+              href={section.href}
+              description={section.description}
+              icon={section.icon}
+            />
+          ))}
+        </Cards>
+      </section>
+
+      <section>
+        <h2>Learn More</h2>
+        <Cards>
+          {learn.map((section) => (
             <Card
               key={section.slug}
               title={section.title}
@@ -78,10 +114,9 @@ export default function HomePage() {
       <section>
         <h2>Contributing</h2>
         <p>
-          This site is open source and contributions are welcome. Check out the{" "}
-          <a href="https://github.com/ultramarine-linux/wiki-fumadocs">
-            GitHub repository
-          </a>{" "}
+          This site is libre software and contributions are welcome. Check out
+          the{" "}
+          <a href="https://github.com/FyraLabs/devdocs">GitHub repository</a>{" "}
           for more information.
         </p>
       </section>
