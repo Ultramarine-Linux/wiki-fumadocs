@@ -3,33 +3,55 @@ title: Gaming on Ultramarine
 description: "Extra instructions for gaming on Ultramarine Linux."
 ---
 
+Ultramarine isn't explicitly optimized for gaming, but that doesn't mean it can't game.
 
-While Ultramarine Linux is not primarily optimized for gaming, it is still a great platform for gaming, as it already has some performance optimizations applied out of the box, and can be further optimized with some tweaks.
+Fyra Labs (the developer of Ultramarine) is a member of the [Open Gaming Collective](https://opengamingcollective.org). We use many of their patches (like Mesa) in Ultramarine, making Ultramarine slightly more optimized than normal distributions.
 
-# Performance
+Gaming on Linux has gotten a lot easier over the years. In some cases it may be even easier than Windows.
 
-Gaming performance on Linux will usually be similar (or sometimes even faster) than on Windows, as the Linux kernel is more lightweight and has better memory management. However, some games may not run as well on Linux due to poor optimization or lack of support for Linux.
+"I was talking to a friend about GTA 4, and they were warning me about how much setup it needed to run on Windows and told me it would probably be worse on Linux. I opened Steam, pressed play, and the game just launched."
 
-Running games under Wine/Proton may help in some cases, but it may also causes issues. Your mileage may vary depending on the game.
+Linux may be missing games like Fortnite and League of Legends, but beyond those (and a handful of other exceptions) your library should run just fine, or potentially better than it did on Windows.
 
-You can refer to [ProtonDB](https://www.protondb.com) to check if your game is compatible with Proton, and to see what tweaks are needed to make it work.
-
-# Gaming Platforms
-
-There are several gaming platforms available on Linux. But the most supported one is Steam, which comes with a native Linux client and has a large library of games that support Linux, as well as Proton for running some Windows-only games.
 
 ## Steam
+You're gonna have the best luck with Steam, and you probably already have a library there.
 
-[Steam](https://steampowered.com) is a great PC gaming platform, and it has native support for Linux. Many game publishers publish their games on Steam, and some even natively support Linux. Steam offers discounts for games published on their platform, and also has a built-in overlay for chatting with friends, taking screenshots, and more.
+Valve has been improving the Linux experience in Steam over the last few years. Most notably Valve has  improvements to Proton, but things have become far better across the board, and even outside of Steam, after the release of the Steam Deck.
 
-Steam runs on the Chromium Embedded Framework (CEF), which essentially means that most of the UI is created using web technologies.
+Install Steam from the app store, make sure that you select "terra" instead of Flathub.
+![Source selector](/assets/steam/selector.png)
 
-You can install Steam in 2 ways:
+Once you launch and sign into Steam, open Settings from the Steam menu.
 
-1. Install the `steam` package from the RPM Fusion repository. (system-wide)
-2. Install the Steam flatpak from Flathub. (user-only)
+![Steam menu](/assets/steam/menu.png)
 
-The first option is recommended, as it has better system integration. However, the second option is also available if you are running Ultramarine OSTree/Kanopy/CoreOS, or if you want to keep Steam isolated from the rest of the system.
+Then, go to the Compatibility page, and ensure that "Steam Play is enabled for all titles" is listed    , and Proton is set either to Experimental, or the latest version.
+
+![Compat page](/assets/steam/compat.png)
+
+Now you're ready to play! Simply download and run any game in your library.
+
+<Callout>
+Sometimes, it may appear like Steam isn't launching. Just wait, sometimes its updater doesn't get shown on screen.
+      </Callout>
+
+If you're looking for some games that run great on Linux to get started, here's some of our team's favorites:
+
+
+- [HoloCure](https://store.steampowered.com/app/2420510) (Free)
+- [Peggle Deluxe](https://store.steampowered.com/app/3480/Peggle_Deluxe) ($5)
+- Any Valve game
+   - [Counter-Strike 2](https://store.steampowered.com/app/730/CounterStrike_2/) (Free)
+   - [Portal Bundle](https://store.steampowered.com/bundle/234/Portal_Bundle) ($15, regularly on sale)
+- [SIGNALIS](https://store.steampowered.com/app/1262350/SIGNALIS/) ($20)
+- [Untitled Goose Game](https://store.steampowered.com/app/837470/Untitled_Goose_Game/) ($20)
+- [Ultrakill](https://store.steampowered.com/app/1229490/ULTRAKILL/) ($25)
+- [Any Jackbox Party Pack](https://store.steampowered.com/developer/jackboxgames) ($25-30)
+- [Stray](https://store.steampowered.com/app/1332010/Stray/) ($30)
+- [Cyberpunk: 2077](https://store.steampowered.com/app/1091500/Cyberpunk_2077/) ($60)
+
+These are not affiliate links, just games we love.
 
 ## itch.io
 
@@ -37,93 +59,70 @@ The first option is recommended, as it has better system integration. However, t
 
 ## Epic Games Store, GOG, and Amazon Games
 
-The Epic Games Store, GOG, and Amazon Games do not have native Linux clients, but you can use the [Heroic Games Launcher](#heroic-games-launcher) to install and run games from these platforms on Linux.
+The Epic Games Store, GOG, and Amazon Games do not have native Linux clients, but you can use the [Heroic Games Launcher](https://heroicgameslauncher.com/) to install and run games from these platforms on Linux.
+
+Simply search for Heroic in the app store and hit install!
 
 ## EA Desktop/Origin
 
-EA Desktop (formerly known as Origin) does not have a native Linux client, but you can either use the [Lutris](#lutris) client to install and run games from EA Desktop, or manually install the EA Desktop client using Wine/Proton.
+We suggest using [Bottles](https://usebottles.com/gaming) to install EA Desktop and your games from it.
 
-Using a [Bottles](#bottles) prefix is recommended for EA Desktop, as it allows you to manage a dedicated prefix for all your EA games.
+Although you can use Bottles for Steam, and Epic Games, we suggest using the solutions we mentioned above instead.
 
 ## Ubisoft Connect/Uplay
 
 If you still own games on Ubisoft Connect (formerly known as Uplay), you may be able to run some of them on Linux using Wine/Proton. However, some games may not work due to Ubisoft's anti-cheat software.
 
-See the [Lutris](#lutris) or [Bottles](#bottles) sections for more information on running Ubisoft Connect games on Linux.
+We suggest using [Bottles](https://usebottles.com/gaming) to install Ubisoft Connect and your games from it.
 
-Simply download the Ubisoft Connect client from the official website, and try running it using Wine/Proton.
+## Anything Else
 
-### Proton
-
-If your game does not support Linux, or the Linux version happens to be inferior to the Windows version, you can use Steam's Proton compatibility layer to run Windows games on Linux. Proton is based on Wine, and it is developed by Valve.
-
-If the game you're trying to play doesn't work on Proton, check back in a week, it's quite possible that it will work after Proton updates or active work from Valve.
-
-### Slow Download Speeds
-
-There have been recent reports of slow download speeds on Steam due to issues with the Steam client and HTTP/2, see the relevant [Steam for Linux issue](https://github.com/ValveSoftware/steam-for-linux/issues/10248) for more information.
-
-If you are experiencing slow download speeds and aren't sure why, you can try disabling HTTP/2 in Steam by adding the following lines to the `~/.steam/steam/steam_dev.cfg` file and restarting steam:
-
-```plaintext
-@nClientDownloadEnableHTTP2PlatformLinux 0
-@fDownloadRatelmprovement ToAddAnother Connection 1.0
-```
-
-## Heroic Games Launcher
-
-The Heroic Games Launcher is a native Linux client for the Epic Games Store and GOG Galaxy. It supports downloading and installing native Linux games from GOG, and running Windows-only games from both GOG and Epic Games Store using Wine/Proton.
-
-## Lutris
-
-Lutris is a game launcher for Linux. It supports installing and managing your game library from various sources, including Steam, GOG, EA Origin, and its own community-provided installers. It also supports running Windows-only games using Wine/Proton.
-
-### EA Desktop
-
-Games that use EA's Origin platform or EA Desktop can be run using Lutris. You can install the EA Desktop client using the Lutris installer, and then install your games from there.
-
-### Epic Games Store
-
-Please refer to the [Heroic Games Launcher](#heroic-games-launcher) section.
-
-## Bottles
-
-Bottles is a tool for managing Wine prefixes. It is similar to Lutris, but is more focused on creating and managing Wine prefixes for multiple applications rather than creating each prefix for a single game or application.
-
-Installing Bottles is only supported as a Flatpak. Any other version of bottles is not supported by the Ultramarine Linux Team.
+If you have loose game files, or games from a source we didn't list, check [ProtonDB](https://www.protondb.com) and try running them in [Bottles](https://usebottles.com/gaming), your mileage my vary, but game support in Bottles gets better every day.
 
 ## Known Incompatible Games
-
 These games are known to not work on Ultramarine due to various reasons, such as anti-cheat software, DRM, or API incompatibilities:
+
+### Games that Simply Won't Run
+
+Some of these may run, but they just aren't worth it. This list is not exhaustive.
 
 | Game                                                | Anti-Cheat implementation | Reason (if applicable)          | Notes                                          |
 | --------------------------------------------------- | ------------------------- | ------------------------------- | ---------------------------------------------- |
-| _Apex Legends_                                      | Easy Anti-Cheat           | -                               | Support for Proton recently removed            |
-| _Fortnite_                                          | Easy Anti-Cheat, BattlEye | -                               | Officially unsupported according to Epic Games |
-| _Honkai Impact 3rd_                                 | Tencent Anti-Cheat Expert | -                               | [^1]                                           |
-| _Honkai: Star Rail_                                 | HoYoProtect               | -                               | [^1]                                           |
-| _Infinity Nikki_                                    | Tencent Anti-Cheat Expert | -                               | [^1] [^2]                                      |
-| _Strinova_                                          | Tencent Anti-Cheat Expert | -                               | [^1] [^2]                                      |
-| _Phantasy Star Online 2: New Genesis_ (Japan)       | Easy Anti-Cheat           | -                               | [^2]                                           |
-| _Tom Clancy's Rainbow Six Siege_                    | BattlEye, MouseTrap       | -                               | -                                              |
-| _The Crew 2_                                        | Easy Anti-Cheat           | -                               | -                                              |
-| _Watch_Dogs_                                        | Easy Anti-Cheat           | -                               | Single-Player only                             |
-| _Watch_Dogs 2_                                      | Easy Anti-Cheat           | -                               | Single-Player only                             |
-| _Watch_Dogs: Legion_                                | Easy Anti-Cheat           | -                               | Single-Player only                             |
-| _Valorant_                                          | Vanguard                  | -                               | -                                              |
-| _League of Legends_                                 | Vanguard                  | -                               | -                                              |
-| _Battlefield V_                                     | EA Anti-Cheat             | -                               | -                                              |
-| _Battlefield 2042_                                  | EA Anti-Cheat             | -                               | -                                              |
-| _Need for Speed Unbound_                            | EA Anti-Cheat             | -                               | -                                              |
-| _Command & Conquer Red Alert 3 & Uprising_          | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
-| _Command & Conquer 3: Tiberium Wars & Kane's Wrath_ | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
-| _Command & Conquer_ games up to _Yuri's Revenge_    | -                         | DirectDraw compatibility issues | [^4]                                           |
+| Apex Legends                                        | Easy Anti-Cheat           | -                               | Support for Proton recently removed            |
+| Fortnite                                            | Easy Anti-Cheat, BattlEye | -                               | Officially unsupported according to Epic Games |
+| Tom Clancy's Rainbow Six Siege                      | BattlEye, MouseTrap       | -                               | -                                              |
+| The Crew 2                                          | Easy Anti-Cheat           | -                               | -                                              |
+| Valorant                                            | Vanguard                  | -                               | -                                              |
+| League of Legends                                   | Vanguard                  | -                               | -                                              |
+| Battlefield V                                       | EA Anti-Cheat             | -                               | -                                              |
+| Battlefield 2042                                    | EA Anti-Cheat             | -                               | -                                              |
+| Need for Speed Unbound                              | EA Anti-Cheat             | -                               | -                                              |
+| Command & Conquer Red Alert 3 & Uprising            | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| Command & Conquer 3: Tiberium Wars & Kane's Wrath   | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| Command & Conquer_ games up to _Yuri's Revenge      | -                         | DirectDraw compatibility issues | [^4]                                           |
 
-For more information on other games, you can refer to the [ProtonDB](https://www.protondb.com) website for compatibility reports.
+### Games with Broken Online Play
+This ranges from online play not working to being banned for trying to. We reccomend just playing these in their single player form.
+
+| Game                                                | Anti-Cheat                | Notes                           |
+|-----------------------------------------------------|---------------------------|---------------------------------|
+| Watch_Dogs                                          | Easy Anti-Cheat           | Single player works             |
+| Watch_Dogs 2                                        | Easy Anti-Cheat           | Single player works             |
+| Watch_Dogs: Legion                                  | Easy Anti-Cheat           | Single player works             |
+| Honkai Impact 3rd                                   | Tencent Anti-Cheat Expert | [^1]                            |
+| Honkai: Star Rail                                   | HoYoProtect               | [^1]                            |
+| Infinity Nikki                                      | Tencent Anti-Cheat Expert | [^1] [^2]                       |
+| Strinova                                            | Tencent Anti-Cheat Expert | [^1] [^2]                       |
+| Phantasy Star Online 2: New Genesis (Japan)         | Easy Anti-Cheat           | [^2]                            |
+
+
+## Gaming Performance
+
+Ultramarine (and Linux distributions generally) use less resources than Windows, meaning you should be able to sqeeuze a couple more frames out of your hardware.
+
+Proton is frequently updated, so performance of non-native games is always being worked on.
 
 [^1]: There may be workarounds for these games, but they are not officially supported and you may risk getting banned for its use. The recommended way to play these games is to play on a mobile device or a Windows machine.
 [^2]: These games have a known whitelist for the Steam Deck specifically, but does not guarantee that it will work on other Linux systems.
 [^3]: You may run this game if you install the game in a path that does not contain periods (e.g. `~/Games/` instead of `~/.local/share/Steam/`).
 [^4]: You may need to install DDrawCompat or CnC-DDraw to run this game properly, as it has compatibility issues even with Windows systems. You may also use CnCNet to apply the aforementioned fixes and enable multiplayer.
-
-

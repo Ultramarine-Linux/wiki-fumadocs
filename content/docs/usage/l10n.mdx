@@ -1,6 +1,6 @@
 ---
-title: Localization, Internationalization and Multilingualization
-description: How to make your system support other languages and even improve the support
+title: Internationalization
+description: How to make your system support other languages and improve support
 ---
 
 
@@ -10,15 +10,15 @@ how i18n works and how it can be set up on Ultramarine.
 
 ## Fonts
 
-Ultramarine should come with fonts for most if not all languages by default. Fonts for CJKV, Thai,
-Indic languages are installed out of the box. If you find any glyphs supported by Unicode not
+Ultramarine should come with fonts for most, if not all, languages by default. Fonts for Chinese, Japanese, Korean, and Vietnamese (CJKV), Thai,
+Indic, and Latin languages are installed out of the box. If you find any glyphs supported by Unicode not
 rendered correctly, [file a bug report].
 
 ### Font Priorities
 
 Chinese users might experience issues where Japanese fonts are preferred over Chinese ones simply
 because the locale code `ja_JP` is before `zh_*` when sorted alphabetically. To solve this issue,
-edit `~/.config/fontconfig/fonts.conf` (or `/etc/fonts/local.conf` for global changes):
+edit `~/.config/fontconfig/fonts.conf` (or `/etc/fonts/local.conf` for system-wide changes):
 
 ```xml
 <?xml version="1.0"?>
@@ -43,10 +43,9 @@ edit `~/.config/fontconfig/fonts.conf` (or `/etc/fonts/local.conf` for global ch
 </fontconfig>
 ```
 
-## Inputting in Another Language
+## Typing in Another Language
 
-You may change your key maps / keyboard layout in the settings applet. Refer to documentations for
-your chosen Desktop Environment (DE) or Window Manager (WM) for more details.
+You may change your keymaps/keyboard layout in the settings app. Check your Edition's documentation or help app for more.
 
 ### IMFs, IMEs and IMs
 
@@ -77,20 +76,20 @@ to install multiple IMEs so that they can type in multiple languages.
 ### Fcitx5 vs IBus
 
 **IBus** (Intelligent Input Bus) is an IMF usually used in GTK-based desktop environments. If you
-are using GNOME/Budgie, you most likely will choose IBus over Fcitx5 due to GNOME Desktop's tight
+are using GNOME, Budgie, or Xfce Edition, you most likely will choose IBus over Fcitx5 due to GNOME Desktop's tight
 integration with IBus. Even though IBus's initial release was back in August 2008, releases are
 still rather frequent and the project is still being maintained.
 
 **Fcitx5** is a newer IMF implementation and provides support for many different languages with a
 slim core extensible with different addons and IMEs. It is the successor to Fcitx. If you are using
-DEs that are not GTK-based (such as KDE Plasma which uses Qt) or any WMs, you should choose Fcitx5.
+DEs that are not GTK-based (such as Plasma which uses Qt) or any WMs, you should choose Fcitx5.
 
 There are no strict rules on which one to choose, you can install Fcitx5 even though you use GNOME,
-and you can also install IBus on a KDE system. Things come down to personal preferences.
+and you can also install IBus on a Plasma system. It comes down to personal preferences.
 
-<Callout type="warning">IBus will not work inside Window Managers.</Callout>
+<Callout type="warning">IBus will not work inside standalone Window Managers.</Callout>
 
-### Setting up Fcitx5 on KDE
+### Setting up Fcitx5 on Plasma Edition
 
 1. Install your chosen IMEs (see the table below) alongside `kcm-fcitx5` and `fcitx5-configtool`.
 
@@ -98,14 +97,9 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 
 2. Enable Fcitx 5:
 
-   - On Wayland (default), go to _Settings > Input Devices > Virtual Keyboard_, and select _Fcitx 5_.
-     - If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select _Fcitx 5_.
-   - On X11, install `fcitx5-autostart`.
-     - If Fcitx 5 does not work even after a reboot, try setting the following in `/etc/environment`:
-     ```
-     GTK_IM_MODULE=fcitx
-     QT_IM_MODULE=fcitx
-     ```
+Go to _Settings > Input Devices > Virtual Keyboard_, and select _Fcitx 5_.
+
+If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select _Fcitx 5_.
 
 3. Head to _Settings > Regional Settings > Input Method_, then start configuring Fcitx 5.
 
@@ -314,5 +308,3 @@ our communities and reach out.
 
 [file a bug report]: https://github.com/Ultramarine-Linux/ultramarine/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D+Issue+Report
 [complete list of IMs]: https://wiki.archlinux.org/title/Input_method#List_of_available_input_method_editors
-
-
