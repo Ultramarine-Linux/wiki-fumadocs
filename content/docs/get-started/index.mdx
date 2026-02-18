@@ -6,7 +6,7 @@ description: "Getting started with installing Ultramarine Linux"
 
 ## System Requirements
 
-If your computer could run Windows 7 well, chances are it'll run Ultramarine Linux. You should check the [System Requirements](/en/hardware/requirements) to make sure
+If your computer could run Windows 7 well, chances are it'll run Ultramarine Linux. You should check the [System Requirements](/docs/get-started/requirements) to make sure.
 
 ## Choosing Your Edition
 
@@ -17,13 +17,11 @@ Ultramarine Linux comes in 4 variants:
 - **Budgie Edition**: A familiar and stylish experience with a bit of flair.
 - **GNOME Edition**: A simple, elegant, and intuitive desktop with a large ecosystem of apps and extensions.
 
-Check the [System Requirements](/en/hardware/requirements) to make sure your hardware is supported.
-
 Ultramarine Linux is distributed in various formats available for download from [our website](https://ultramarine-linux.org).
 
 <Callout type="warning">
   Fyra Labs cannot guarantee the safety or quality of images downloaded from
-  sites other than our website or FOSSTorrents
+  sites other than our website, the Microsoft Store, Raspberry Pi Imager, or FOSSTorrents
 </Callout>
 
 ### Microsoft Surface Devices
@@ -36,9 +34,9 @@ Downloads can be found on our website, and more information can be found [here](
 Ultramarine offers a WSL build/application.
 This can be found on the microsoft store, with `winget`, or can be installed with an offline script found on it's anywhere page [here](/docs/get-started/wsl).
 
-### Raw Images and Raspberry Pi
+### Preinstalled Images and Raspberry Pi
 
-Ultramarine is also available as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
+Ultramarine is also available as a preinstalled (or raw) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
 
 These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine/) sections of the download page.
 
@@ -81,9 +79,9 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 
 ## Creating the Installer
 
-Grab a USB stick! Use a flasher program to create an installer from the image. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+Grab a USB stick! Use a flasher program to create an installer from the image. [Moonshot](https://github.com/fyralabs/moonshot) is an easy cross-platform choice.
 
-![](/assets/balenaetcher.png)
+![](/assets/moonshot/moonshot.png)
 
 You can also use [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter), or the Disks application on Budgie, Xfce, and GNOME editions.
 
@@ -106,8 +104,3 @@ Most computers have a special key that can be used to select a boot device, or t
   If you're currently using Linux, you may be able to enter the BIOS by running
   `sudo systemctl reboot --firmware`
 </Callout>
-
-## Footnotes
-
-- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
-- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
