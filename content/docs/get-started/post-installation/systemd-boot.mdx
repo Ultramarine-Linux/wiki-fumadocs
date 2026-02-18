@@ -1,17 +1,14 @@
 ---
-title: Advanced Post-Installation Steps
-description: Learn how to further configure your Ultramarine Linux installation.
+title: Use systemd-boot as the Bootloader (Advanced)
+description: Try a modern bootloader
 ---
-
-
-## Use systemd-boot as the bootloader
 
 Ultramarine Linux currently still uses GRUB as the default bootloader for compatibility reasons. However, if you have a UEFI system, you can simply switch to
 systemd-boot, which is a more modern bootloader.
 
 <Callout type="warning">
-  This step is optional. You can skip this step if you don't want to use
-  systemd-boot. Make sure to back up your data and have a live USB ready in case
+  Don't try this if you don't know what you're doing.
+  Make sure to back up your data and have a live USB ready in case
   something goes wrong. Incorrectly configuring a new bootloader can make your
   OS unbootable.
 </Callout>
@@ -51,7 +48,7 @@ sudo dnf reinstall -y kernel-core
 6. Reboot your system and make sure it boots correctly, run `sudo bootctl` to check if the boot process is correct.
 7. (Optional) Proceed to [Set up Secure Boot](#set-up-secure-boot) if you want to re-enable Secure Boot.
 
-## Set up Secure Boot
+## Using Secure Boot with systemd-boot
 
 [Secure Boot] is a UEFI security protocol that secures the boot process by ensuring that
 only signed executables are allowed to boot. While Ultramarine Linux's bootloader shim is signed by Microsoft and Red Hat,
@@ -90,5 +87,3 @@ After signing the necessary files and enrolling them in your firmware, you can r
 
 [Secure Boot]: https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot
 [sbctl]: https://github.com/Foxboron/sbctl
-
-
