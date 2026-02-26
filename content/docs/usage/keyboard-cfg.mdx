@@ -12,13 +12,13 @@ If you would like to type in another language, we have a dedicated [localization
 
 ## Remapping Keys
 
-keyd is a key remapping tool that works at the kernel level, this means your remapped keys will work regardless of the desktop you use (or lack thereof).
+keyd<sup>dnf</sup> is a key remapping tool that works at the kernel level, this means your remapped keys will work regardless of the desktop you use (or lack thereof).
 
 ### Creating a Config
 
 1. Make sure you are an administrator
 2. Create `/etc/keyd/default.conf` and paste the example configuration below into it. Save the file.
-3. Install keyd (from [Terra]): `sudo dnf install keyd`
+3. Install keyd<sup>dnf</sup> (from [Terra]): `sudo dnf install keyd`
 4. Start the keyd service `systemctl enable --now keyd`
 
 Every time you change your configuration, you will need to reload keyd using `sudo keyd reload`

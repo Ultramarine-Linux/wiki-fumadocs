@@ -28,7 +28,7 @@ Locate the 'Hyper-V Requirements' section, near the bottom. Within that section,
 ## Enabling Virtualization
 
 - Power off your device.
-- Press the power button, then press your [BIOS key](/en/setup/bioskeys).
+- Press the power button, then press your [BIOS key](/docs/get-started/bioskeys).
 - Locate the virtualization option. This can be in various places depending on the motherboard/manufacturer. Typically, this will be in the CPU configuration menu. Check with your manufacturer if you need help.
 - Save and exit. There will typically be a dedicated key to do this, or a select option on the main or exit page.
 
@@ -36,7 +36,7 @@ Hardware virtualization should now be enabled, and you can proceed to installati
 
 ## Installing Ultramarine WSL
 
-### Install using the Microsoft Store
+### Install Using the Microsoft Store
 
 Open the Microsoft Store, and search 'Ultramarine Linux' in the Microsoft Store app, or use [this link](https://apps.microsoft.com/detail/9PBPG2RDMZB9?hl=en-us&gl=US&ocid=pdpshare)
 
@@ -44,7 +44,7 @@ Select 'Ultramarine Linux,' verify the author is Fyra Labs, and then select 'Get
 
 After this, Ultramarine WSL will appear as a Windows app. You can select 'Open' from the Microsoft Store window.
 
-You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
+You're now ready for the [Post-Installation](#post-installation) section!
 
 ### Install with WinGet
 
@@ -64,7 +64,7 @@ winget install ultramarine
 
 After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
 
-You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
+You're now ready for the [Post-Installation](#post-installation) section!
 
 ### Install from the Command Line
 
@@ -94,7 +94,7 @@ Be sure to replace the file name in the URL to match your architecture. If you a
 
 After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
 
-You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
+You're now ready for the [Post-Installation](#post-installation) section!
 
 ## Post-installation
 
@@ -112,7 +112,7 @@ It is always recommended to update a fresh install. To do this, please run the f
 sudo dnf upgrade
 ```
 
-### Setting your Default WSL Distro as Ultramarine
+### Setting your Default WSL Distro to Ultramarine
 
 To change your default WSL distro to Ultramarine, run the following command:
 
@@ -130,7 +130,7 @@ Then, replace `Ultramarine` in the setdefault command with the listed name.
 
 ### Hardware Acceleration
 
-Starting with Ultramarine WSL 42, hardware acceleration packages are included by default.
+Starting with Ultramarine 42, hardware acceleration packages are included by default.
 
 If you upgraded from 41 to 42, you may need to enable the terra-mesa repository to install the needed packages.
 Run the following command to enable the repo:
@@ -139,21 +139,27 @@ Run the following command to enable the repo:
 sudo sed -i '0,/enabled=0/s/enabled=0/enabled=1/' /etc/yum.repos.d/terra-mesa.repo
 ```
 
-And then install the `mesa-vulkan-drivers` package:
+And then install the `mesa-vulkan-drivers`<sup>dnf</sup> package:
 
 ```sh
 sudo dnf install mesa-vulkan-drivers
 ```
 
-This will install everything you need for hardware acceleration through Ultramarine WSL.
+This will install everything you need for hardware acceleration on Ultramarine WSL.
 
 ### Version Upgrading
 
-To version upgrade Ultramarine WSL, check the instructions [here](/en/release/43-upgrades#upgrading-ultramarine-wsl-system-versions).
+WSL works a bit differently than regular Ultramarine installs, run the following commands, replacing `xx` with the version you want to upgrade to. Follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf distro-sync --releasever=xx
+```
+
 
 ## More Information
 
-Microsoft has vast resources about WSL, here are some helpful links:
+Microsoft has lots of resources about WSL, here are some helpful links:
 
 General WSL information: https://learn.microsoft.com/en-us/windows/wsl/about
 

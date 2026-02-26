@@ -31,9 +31,9 @@ First, you will need to decompress it.
 - On Windows 10, use 7zip or WinRaR
 - On macOS, install `zstd` from [Homebrew](https://brew.sh/) (`brew install zstd`), then `unzstd FILENAME.img.zst`.
 
-Grab a USB stick or SD Card! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+Grab a USB stick or SD Card! Use a flasher program to flash Ultramarine to your storage device. [Moonshot](https://www.github.com/fyralabs/moonshot)<sup>flatpak</sup> is an easy cross-platform choice.
 
-![](/assets/balenaetcher.png)
+![](/assets/moonshot/moonshot.png)
 
 Simply select the .img file, the device you're using, and click flash.
 
@@ -41,7 +41,7 @@ You can also use the Disks application on Budgie, Xfce, and GNOME editions.
 
 ### Raspberry Pi Imager
 
-- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/). You can grab this from the app store on Ultramarine. If you're on Windows or Mac you can [download it from here](https://www.raspberrypi.com/software/), or use it [directly in the Raspberry Pi firmware](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-over-the-network).
+- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)<sup>flatpak</sup>. You can grab this from the app store on Ultramarine. If you're on Windows or Mac you can [download it from here](https://www.raspberrypi.com/software/), or use it [directly in the Raspberry Pi firmware](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-over-the-network).
 - Open Raspberry Pi Imager, select 'Choose Device,' then select 'Raspberry Pi 4.'
 - Select 'Choose OS' then scroll down to 'Other General-Purpose OS,' select 'Ultramarine Linux,' then select your edition of choice.
 - Select 'Choose Storage,' and select your storage device you would like to flash to. Double check you have the correct device selected, as this is a destructive operation.
@@ -64,18 +64,18 @@ Fedora has upstream support for the Pi 4, 400, and 3. Ultramarine Anywhere inten
 
 We have Raspberry Pi packages packaged in [Terra](https://terra.fyralabs.com/). We are working on packaging as many as we can, currently included packages:
 
-- [rpi-utils](https://github.com/raspberrypi/utils), a collection of miscellaneous tools for Raspberry Pis. You may install these individually, or all together as `rpi-utils`
-- [rpi-update](https://github.com/raspberrypi/rpi-update), a script to update Raspberry Pi firmware.
-- [Picotool](https://github.com/raspberrypi/picotool), a tool for working with RP2040/RP2350 devices.
+- [rpi-utils](https://github.com/raspberrypi/utils)<sup>dnf</sup>, a collection of miscellaneous tools for Raspberry Pis. You may install these individually, or all together as `rpi-utils`
+- [rpi-update](https://github.com/raspberrypi/rpi-update)<sup>dnf</sup>, a script to update Raspberry Pi firmware.
+- [Picotool](https://github.com/raspberrypi/picotool)<sup>dnf</sup>, a tool for working with RP2040/RP2350 devices.
 
-We also have the [Raspberry Pi Control Center](https://github.com/raspberrypi-ui/rpcc) application, and its various plugins:
+We also have the [Raspberry Pi Control Center](https://github.com/raspberrypi-ui/rpcc)<sup>dnf</sup> application, and its various plugins:
 
-- [Appset](https://github.com/raspberrypi-ui/appset), Application for customisation of appearance of Raspberry Pi Desktop.
-- [Bookshelf](https://github.com/raspberrypi-ui/bookshelf), A browser for Raspberry Pi Press publications.
-- [Piclone](https://github.com/raspberrypi-ui/piclone), Utility to back up a Raspberry Pi to an SD card.
-- [Raindrop](https://github.com/raspberrypi-ui/raindrop), Graphical display configurator for Raspberry Pi, using arandr and wlrandr.
-- [Rasputin](https://github.com/raspberrypi-ui/rasputin), Mouse and keyboard settings for Raspberry Pi Desktop.
-- [Rpinters](https://github.com/raspberrypi-ui/rpinters), Printing utility
+- [Appset](https://github.com/raspberrypi-ui/appset)<sup>dnf</sup>, Application for customisation of appearance of Raspberry Pi Desktop.
+- [Bookshelf](https://github.com/raspberrypi-ui/bookshelf)<sup>dnf</sup>, A browser for Raspberry Pi Press publications.
+- [Piclone](https://github.com/raspberrypi-ui/piclone)<sup>dnf</sup>, Utility to back up a Raspberry Pi to an SD card.
+- [Raindrop](https://github.com/raspberrypi-ui/raindrop)<sup>dnf</sup>, Graphical display configurator for Raspberry Pi, using arandr and wlrandr.
+- [Rasputin](https://github.com/raspberrypi-ui/rasputin)<sup>dnf</sup>, Mouse and keyboard settings for Raspberry Pi Desktop.
+- [Rpinters](https://github.com/raspberrypi-ui/rpinters)<sup>dnf</sup>, Printing utility
 
 To install any of these:
 

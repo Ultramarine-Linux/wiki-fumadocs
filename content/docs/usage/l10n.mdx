@@ -62,12 +62,12 @@ languages.
 are not actual software; there must be an IME that intercepts the inputted keys and map them into
 output texts, where the mapping is specified by the IM.
 
-As an example, a Japanese KDE user would install `fcitx5-mozc` in order to type Japanese. In this
+As an example, a Japanese KDE user would install `fcitx5-mozc`<sup>dnf</sup> in order to type Japanese. In this
 case, Fcitx5 is the IMF, Mozc is the IME, and the IM can be Romaji or Kana input depending on the
 user's preference.
 
-A Cantonese GNOME user from Hong Kong learning Korean would install `ibus-rime` with Jyutping and
-Cangjie support alongside `ibus-hangul` for Korean support. Here, IBus is the IMF, Rime IME provides
+A Cantonese GNOME user from Hong Kong learning Korean would install `ibus-rime`<sup>dnf</sup> with Jyutping and
+Cangjie support alongside `ibus-hangul`<sup>dnf</sup> for Korean support. Here, IBus is the IMF, Rime IME provides
 support for the Jyutping IM and Cangjie IM, while libhangul IME provides support for the Hangul IM.
 
 In most typical cases, only 1 IMF is installed in a system. However, multilingual users may choose
@@ -75,12 +75,12 @@ to install multiple IMEs so that they can type in multiple languages.
 
 ### Fcitx5 vs IBus
 
-**IBus** (Intelligent Input Bus) is an IMF usually used in GTK-based desktop environments. If you
+**IBus**<sup>dnf</sup> (Intelligent Input Bus) is an IMF usually used in GTK-based desktop environments. If you
 are using GNOME, Budgie, or Xfce Edition, you most likely will choose IBus over Fcitx5 due to GNOME Desktop's tight
 integration with IBus. Even though IBus's initial release was back in August 2008, releases are
 still rather frequent and the project is still being maintained.
 
-**Fcitx5** is a newer IMF implementation and provides support for many different languages with a
+**Fcitx5**<sup>dnf</sup> is a newer IMF implementation and provides support for many different languages with a
 slim core extensible with different addons and IMEs. It is the successor to Fcitx. If you are using
 DEs that are not GTK-based (such as Plasma which uses Qt) or any WMs, you should choose Fcitx5.
 
@@ -91,9 +91,9 @@ and you can also install IBus on a Plasma system. It comes down to personal pref
 
 ### Setting up Fcitx5 on Plasma Edition
 
-1. Install your chosen IMEs (see the table below) alongside `kcm-fcitx5` and `fcitx5-configtool`.
+1. Install your chosen IMEs (see the table below) alongside `kcm-fcitx5`<sup>dnf</sup> and `fcitx5-configtool`<sup>dnf</sup>.
 
-   - Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+   - Install `fcitx5-qt`<sup>dnf</sup> and `fcitx5-gtk`<sup>dnf</sup> for Qt/GTK support.
 
 2. Enable Fcitx 5:
 
@@ -105,8 +105,8 @@ If Fcitx 5 does not work even after a reboot, try running `im-chooser` and selec
 
 ### Setting up Fcitx5 on Other DEs/WMs
 
-1. Install your chosen IMEs (see the table below) alongside `fcitx5-configtool`, `fcitx5-autostart`.
-   - Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+1. Install your chosen IMEs (see the table below) alongside `fcitx5-configtool`<sup>dnf</sup>, `fcitx5-autostart`<sup>dnf</sup>.
+   - Install `fcitx5-qt`<sup>dnf</sup> and `fcitx5-gtk`<sup>dnf</sup> for Qt/GTK support.
 2. Fcitx 5 should be enabled via the autostart package. If not,
 
    - try running `im-chooser` and select _Fcitx 5_.
@@ -204,10 +204,10 @@ such that it better represents Ultramarine's support on different IMs:
 1. Anthy (the IM, not IME) is unmaintained, Mozc is usually preferred.
 2. https://github.com/ueno/libskk
 3. https://github.com/ueno/libkkc
-4. See [#Compose Key](#compose-key). There is also LaTeX support in `fcitx5-m17n`.
-5. See below for more IMs supported by `fcitx5-table-extra`.
+4. See [#Compose Key](#compose-key). There is also LaTeX support in `fcitx5-m17n`<sup>dnf</sup>.
+5. See below for more IMs supported by `fcitx5-table-extra`<sup>dnf</sup>.
 
-#### List of IMs Supported by `fcitx5-table-extra`
+#### List of IMs Supported by `fcitx5-table-extra`<sup>dnf</sup>
 
 <Callout type="warning">
   Due to a bug in Fedora packaging, you need to also install
@@ -239,7 +239,7 @@ such that it better represents Ultramarine's support on different IMs:
 - zhengma-pinyin
 - zhengma
 
-#### List of Packages for `ibus-table*`
+#### List of Packages for `ibus-table*`<sup>dnf</sup>
 
 - `ibus-table-code`: Ibus-Tables for Latex, CNS11643 & Emoticons
 - `ibus-table-cyrillic`: Ibus-Tables for Cyrillic

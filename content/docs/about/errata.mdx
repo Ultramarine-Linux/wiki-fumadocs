@@ -29,7 +29,7 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
   This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dracut-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
 
-  Since Ultramarine 42, only 2 kernel versions are kept, and `dracut-strip-trigger` should be installed by default.
+  Since Ultramarine 42, only 2 kernel versions are kept, and `dracut-strip-trigger`<sup>dnf</sup> should be installed by default.
 
 - Taidan language switching does not work
 
@@ -55,7 +55,7 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 - Nvidia and Surface users may experience a kernel panic after upgrade.
 
-  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dracut-strip-trigger`<sup>dnf</sup> (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
 
 
 ## Ultramarine Linux 40 (EOL)
@@ -76,7 +76,7 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 - Flathub not included in new installs
 
-  Our builder had dnf weakdeps disabled, causing `ultramarine-repos-extras` to not be installed. This was fixed in UM40.1.
+  Our builder had dnf weakdeps disabled, causing `ultramarine-repos-extras`<sup>dnf</sup> to not be installed. This was fixed in UM40.1.
 
 - Raw images don't have a Plymouth theme
 
@@ -92,7 +92,7 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 - Fedora bookmarks still included
 
-  We removed the Fedora bookmarks and replaced them with `ultramarine-phony-bookmarks`. As the name implies, there are no bookmarks.
+  We removed the Fedora bookmarks and replaced them with `ultramarine-phony-bookmarks`<sup>dnf</sup>. As the name implies, there are no bookmarks.
 
 - dnf5 not set as default
 
@@ -154,7 +154,7 @@ A workaround is to also specify the Fedora buildroot when trying to add a Copr r
 
 - Pop!\_Shell launcher
 
-The Pop!\_Shell launcher is not included. This can be fixed by installing the `pop-launcher` package.
+The Pop!\_Shell launcher is not included. This can be fixed by installing the `pop-launcher`<sup>dnf</sup> package.
 
 ### Cutefish Edition
 
